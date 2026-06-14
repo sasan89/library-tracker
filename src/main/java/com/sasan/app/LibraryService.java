@@ -32,6 +32,10 @@ public class LibraryService {
 
     public boolean markAsRead(String title) {
         return updateReadStatus(title, true);
+
+    }
+    public boolean markAsUnread(String title) {
+        return updateReadStatus(title, false);
     }
 
     public boolean updateReadStatus(String title, boolean isRead) {
@@ -62,9 +66,15 @@ public class LibraryService {
                     .collect(Collectors.toList());
     }
 
-    public List<Book> getUreadBooks(String author) {
+    public List<Book> findByGenre(String genre) {
         return books.stream()
-                    .filter(b -> b.isRead())
+                    .filter(b -> b.genre().equalsIgnoreCase(genre))
+                    .collect(Collectors.toList());
+    }
+
+    public List<Book> getUnreadBooks() {
+        return books.stream()
+                    .filter(b -> !b.isRead())
                     .collect(Collectors.toList());
     }
 
