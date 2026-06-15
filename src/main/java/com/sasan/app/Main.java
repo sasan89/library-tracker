@@ -97,12 +97,12 @@ public class Main {
             return;
         }
 
-        System.out.println("\n" + "–".repeat(85));
+        System.out.println("\n" + "–".repeat(90));
         System.out.printf("%-35s %-20s %-15s %-6s %s%n",
                 "Title", "Author", "Genre", "Year", "Status");
-        System.out.println("–".repeat(85));
+        System.out.println("–".repeat(90));
         books.forEach(b -> System.out.println(b.summary()));
-        System.out.println("–".repeat(85));
+        System.out.println("–".repeat(90));
         System.out.println("Total: " + books.size() + " books");
     }
 
@@ -138,9 +138,9 @@ public class Main {
         else {
             System.out.printf("%n%-35s %-20s %-15s %-6s %s%n",
                 "Title", "Author", "Genre", "Year", "Status");
-            System.out.println("–".repeat(85));
+            System.out.println("–".repeat(90));
             results.forEach(b -> System.out.println(b.summary()));
-            System.out.println("–".repeat(85));
+            System.out.println("–".repeat(90));
             System.out.println("Total: " + results.size() + " books");
         }
     }
