@@ -5,7 +5,7 @@ import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookRepository {
+public class BookRepository implements BookStore {
     private final Path filePath;
 
     public BookRepository(String fileName) {

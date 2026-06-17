@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 
 public class LibraryService {
 
-    private final BookRepository repository;
+    private final BookStore repository;
     private List<Book> books;
 
-    public LibraryService(BookRepository repository) {
+    public LibraryService(BookStore repository) {
         this.repository = repository;
         this.books = new ArrayList<>(repository.loadAll());
     }
