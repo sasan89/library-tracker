@@ -5,11 +5,13 @@ import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookRepository implements BookStore {
-    private final Path filePath;
+import org.springframework.stereotype.Repository;
 
-    public BookRepository(String fileName) {
-        this.filePath = Paths.get(fileName);
+@Repository
+public class BookRepository implements BookStore {
+    private final Path filePath = Path.of("books.csv");
+
+    public BookRepository() {
     }
 
     public List<Book> loadAll() {
@@ -22,7 +24,7 @@ public class BookRepository implements BookStore {
         try (BufferedReader reader = Files.newBufferedReader(filePath)) {
             String line;
             while ((line = reader.readLine()) != null) {
-                if (!line.isBlank()){
+                if (!line.isBlank()) {
                     books.add(Book.fromCsv(line));
                 }
             }
