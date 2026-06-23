@@ -8,7 +8,7 @@ public class Main {
 
     public static final Scanner scanner = new Scanner(System.in);
     public static final LibraryService service = 
-            new LibraryService(new BookRepository("books.csv"));
+            new LibraryService(new BookRepository());
 
     public static void main(String[] args) {
 
